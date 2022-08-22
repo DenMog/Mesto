@@ -7,11 +7,24 @@
     background-position: center;
   }
 
+@media screen and (max-width: 768px) {
+  .profile__avatar {
+      align-self: center;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .profile__avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .profile__avatar {
     margin-right: 0;
     margin-bottom: 26px;
-    align-self: center;
+    
     width: 120px;
     height: 120px;
   }

@@ -6,6 +6,7 @@
     height: 50px;
     border: 1px solid #000;
     border-radius: 2px;
+    box-sizing: border-box;
     color: #fff;
     background-color: #000;
     cursor: pointer;
@@ -19,4 +20,14 @@
   
   .form__submit:hover {
     opacity: 0.6;
+  }
+
+  @media screen and (max-width: 480px) {
+    .form__submit {
+      max-width: 238px;
+      height: 46px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 16.94px;
+    }
   }

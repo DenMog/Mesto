@@ -12,6 +12,22 @@
     right: -40px;
   }
   
-  .popup__close:hover {
+  .popup__close-button:hover {
     opacity: 0.6;
+  }
+
+  @media screen and (max-width: 720px) {
+    .popup__close-button {
+      top: -36px;
+      right: -36px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .popup__close-button {
+      width: 20px;
+      height: 20px;
+      top: -36px;
+      right: 0;
+    }
   }

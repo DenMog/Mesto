@@ -9,3 +9,11 @@
     position: fixed;
     box-sizing: border-box;
   }
+
+  @media screen and (max-width: 480px) {
+    .popup__box {
+      max-width: 282px;
+      padding: 25px 22px;
+  
+    }
+  }
