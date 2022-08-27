@@ -18,16 +18,16 @@
     text-align: center;
     }
   
-  .form__submit:hover {
+  .popup__submit-button:hover {
     opacity: 0.6;
   }
 
   @media screen and (max-width: 480px) {
-    .form__submit {
+    .popup__submit-button {
       max-width: 238px;
       height: 46px;
       margin-top: 20px;
       font-size: 14px;
-      line-height: 16.94px;
+      line-height: 17px;
     }
   }
