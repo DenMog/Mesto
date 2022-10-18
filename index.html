@@ -8,44 +8,42 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body>
-    <div class="page">
-        <header class="header">
-            <img class="header__logo" src="./images/Vector.png" alt="Логотип сайта Место.">
-        </header>
-        <main class="content">
-            <section class="profile">
-              <div class="profile__place">
-                <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
-                <div class="profile__info">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__edit-button"></button>
-                    <p class="profile__subtitle">Исследователь океана</p>
-                </div>
-              </div>
-                <button type="button" class="profile__add-button"></button>
-            </section>
-            <section class="elements">
-              <ul class="element-list">
-              </ul>
-            </section>
-        </main>
-        <footer class="footer">
-            <p class="footer__copyright">&copy;2022 Mesto Russia</p>
-        </footer>
-
-        <div class="popup">
-            <div class="popup__box">
-              <button type="button" class="popup__close-button"></button>
-              <h3 class="popup__title">Редактировать профиль</h3>
-              <form class="popup__form" name="input_form">
-                <fieldset class="popup__fieldset">
-                  <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_name" value="" name="username">
-                  <input type="text" placeholder="О себе" class="popup__form-input popup__form-input_about" value="" name="job">
-                </fieldset>
-                <button type="submit" class="popup__submit-button">Сохранить</button>
-              </form>
-            </div>
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/Vector.png" alt="Логотип сайта Место.">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__place">
+          <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__edit-button"></button>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
+        </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+      <section class="elements">
+        <ul class="element-list">
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy;2022 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+      <div class="popup__box">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="input_form">
+          <fieldset class="popup__fieldset">
+            <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_name" value="" name="username">
+            <input type="text" placeholder="О себе" class="popup__form-input popup__form-input_about" value="" name="job">
+          </fieldset>
+          <button type="submit" class="popup__submit-button">Сохранить</button>
+        </form>
+      </div>
     </div>
     <div class="popup popup_card">
       <div class="popup__box">
@@ -60,17 +58,15 @@
         </form>
       </div>
     </div>
-</div>
-<div class="popup popup_img">
-  <div class="popup__photo-container">
-    <button type="button" class="popup__close-button popup_img-close-button"></button>
-    <figure class="popup__figure">
-      <img class="popup__photo">
-      <figcaption class="popup__caption"></figcaption>
-    </figure>
-  </div>
-</div>
-</div>
+    <div class="popup popup_img">
+      <div class="popup__photo-container">
+        <button type="button" class="popup__close-button popup_img-close-button"></button>
+        <figure class="popup__figure">
+          <img class="popup__photo">
+          <figcaption class="popup__caption"></figcaption>
+        </figure>
+      </div>
+    </div>
     <template id="element-template">
       <li class="element">
         <img class="element__image">
@@ -81,6 +77,7 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/index.js"></script>
+  </div>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
