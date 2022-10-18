@@ -1,0 +1,10 @@
+.popup__photo-container {
+    color: #fff;
+    position: fixed;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .popup__photo-container {
+      max-width: 282px;
+    }
+  }

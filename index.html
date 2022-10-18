@@ -26,49 +26,7 @@
             </section>
             <section class="elements">
               <ul class="element-list">
-                <li class="element">
-                    <img class="element__image" src="./images/Абрау-Дюрсо.jpeg" alt="Абрау-Дюрсо">
-                    <div class="element__group">
-                      <h2 class="element__title">Абрау-Дюрсо</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                  <li class="element">
-                    <img class="element__image" src="./images/Ергаки.jpeg" alt="Ергаки">
-                    <div class="element__group">
-                      <h2 class="element__title">Ергаки</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                  <li class="element">
-                    <img class="element__image" src="./images/Зеленоградск.jpeg" alt="Зеленоградск">
-                    <div class="element__group">
-                      <h2 class="element__title">Зеленоградск</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                  <li class="element">
-                    <img class="element__image" src="./images/Кападокия.jpeg" alt="Кападокия">
-                    <div class="element__group">
-                      <h2 class="element__title">Кападокия</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                  <li class="element">
-                    <img class="element__image" src="./images/Карелия.jpeg" alt="Карелия">
-                    <div class="element__group">
-                      <h2 class="element__title">Карелия</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                  <li class="element">
-                    <img class="element__image" src="./images/Кольский.jpeg" alt="Кольский">
-                    <div class="element__group">
-                      <h2 class="element__title">Кольский п-ов</h2>
-                      <button type="button" class="element__like-button"></button>
-                    </div>
-                  </li>
-                </ul>
+              </ul>
             </section>
         </main>
         <footer class="footer">
@@ -89,6 +47,40 @@
             </div>
           </div>
     </div>
+    <div class="popup popup_card">
+      <div class="popup__box">
+        <button type="button" class="popup__close-button popup_card-close-button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form popup__form-photo" name="input_form">
+          <fieldset class="popup__fieldset">
+            <input type="text" placeholder="Название" class="popup__form-input popup__form-input_place" value="" name="placename">
+            <input type="url" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_link" value="" name="link">
+          </fieldset>
+          <button type="submit" class="popup__submit-button">Создать</button>
+        </form>
+      </div>
+    </div>
+</div>
+<div class="popup popup_img">
+  <div class="popup__photo-container">
+    <button type="button" class="popup__close-button popup_img-close-button"></button>
+    <figure class="popup__figure">
+      <img class="popup__photo">
+      <figcaption class="popup__caption"></figcaption>
+    </figure>
+  </div>
+</div>
+</div>
+    <template id="element-template">
+      <li class="element">
+        <img class="element__image">
+        <button type="button" class="element__remove"></button>
+        <div class="element__group">
+          <h2 class="element__title"></h2>
+          <button class="element__like-button" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
 </body>
 </html>
