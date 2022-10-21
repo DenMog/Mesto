@@ -43,6 +43,7 @@ const popupImg = document.querySelector('.popup_img');
 const popupPhoto = popupImg.querySelector('.popup__photo');
 const popupCaption = popupImg.querySelector('.popup__caption');
 const elementList = document.querySelector('.element-list');
+const elementTemplate = document.querySelector('#element-template').content;
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -66,10 +67,9 @@ function submitFormHandler (event) {
 }
 
 function outputCard( name, link ) {
-  
-  const elementTemplate = document.querySelector('#element-template').content;
   const elementPlace = elementTemplate.querySelector(".element").cloneNode(true);
   elementPlace.querySelector(".element__image").src = link;
+  elementPlace.querySelector(".element__image").alt = name;
   elementPlace.querySelector(".element__title").textContent = name;
   
   const btnRemove = elementPlace.querySelector(".element__remove");
@@ -108,10 +108,6 @@ function submitFormPhotoHandler (event){
   })
 
   closePopup(popupCard);
-}
-
-function closePhoto () {
-  popupImg.classList.remove('popup_opened')
 }
 
 btnClose.forEach((button) => {
