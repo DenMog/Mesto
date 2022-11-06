@@ -47,10 +47,12 @@ const elementTemplate = document.querySelector('#element-template').content;
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener("keydown", closEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener("keydown", closingByEscape);
 }
 
 function openProfilePopup() {
@@ -115,8 +117,14 @@ btnClose.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
+function closEsc(event) {
+  if (event.key === "Escape") {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+}
 
 formElement.addEventListener('submit', submitFormHandler);
 btnEdit.addEventListener('click', openProfilePopup);
 formElementPhoto.addEventListener('submit', submitFormPhotoHandler);
 btnAdd.addEventListener('click', () => openPopup(popupCard));
+

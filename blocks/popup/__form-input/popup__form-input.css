@@ -14,8 +14,14 @@
     outline: none;
   }
 
+.popup__form-input:focus {
+    outline: 2px solid blue;
+}
+.popup__form-input::placeholder {
+  color: grey;
+}
   @media screen and (max-width: 480px) {
-    .form__input {
+    .popup__form-input {
       max-width: 238px;
     }
   }

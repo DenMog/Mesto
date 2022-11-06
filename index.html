@@ -32,27 +32,35 @@
     <footer class="footer">
       <p class="footer__copyright">&copy;2022 Mesto Russia</p>
     </footer>
-    <div class="popup popup_profile">
+    <!-- <div class="popup popup_profile">
       <div class="popup__box">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="input_form">
+        <form class="popup__form form" name="input_form" novalidate action="#">
           <fieldset class="popup__fieldset">
-            <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_name" value="" name="username">
-            <input type="text" placeholder="О себе" class="popup__form-input popup__form-input_about" value="" name="job">
+            <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_name" value="" name="username" minlength="2"
+            maxlength="40" required id="profile-name">
+            <span class="popup__form-input-error input-error-username"></span>
+            <input type="text" placeholder="О себе" class="popup__form-input popup__form-input_about" value="" name="job" minlength="2"
+            maxlength="200" required id="profile-about">
+            <span class="popup__form-input-error input-error-job"></span>
           </fieldset>
           <button type="submit" class="popup__submit-button">Сохранить</button>
         </form>
       </div>
-    </div>
+    </div> -->
     <div class="popup popup_card">
       <div class="popup__box">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Новое место</h3>
-        <form class="popup__form popup__form-photo" name="input_form">
+        <form class="popup__form popup__form-photo form" name="input_form" action="#" novalidate>
           <fieldset class="popup__fieldset">
-            <input type="text" placeholder="Название" class="popup__form-input popup__form-input_place" value="" name="placename">
-            <input type="url" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_link" value="" name="link">
+            <input type="text" placeholder="Название" class="popup__form-input popup__form-input_place " value="" name="placename" minlength="2"
+                   maxlength="30" required id="title-place">
+            <span  class="popup__form-input-error input-error-placename"></span>
+            <input type="link" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_link " value="" name="link" required 
+                   id="place-link">
+            <span class="popup__form-input-error input-error-link"></span>
           </fieldset>
           <button type="submit" class="popup__submit-button">Создать</button>
         </form>
@@ -78,6 +86,7 @@
       </li>
     </template>
   </div>
+  <script src="./scripts/validation.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
