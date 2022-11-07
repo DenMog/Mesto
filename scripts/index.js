@@ -52,7 +52,7 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener("keydown", closingByEscape);
+  document.removeEventListener("keydown", closEsc);
 }
 
 function openProfilePopup() {
@@ -123,8 +123,16 @@ function closEsc(event) {
   }
 }
 
+popups.forEach((item) =>
+  item.addEventListener("click", (event) => {
+    closePopup(event.target);
+  })
+);
+
+
 formElement.addEventListener('submit', submitFormHandler);
 btnEdit.addEventListener('click', openProfilePopup);
 formElementPhoto.addEventListener('submit', submitFormPhotoHandler);
 btnAdd.addEventListener('click', () => openPopup(popupCard));
+
 
