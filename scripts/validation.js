@@ -13,12 +13,12 @@ const hideInputError = (config, formElement, inputElement) => {
 }
 
 const disableButton = (config, formSubmitButtonElement) => {
-    formSubmitButtonElement.classList.add(config.disabledButtonClass);
+    formSubmitButtonElement.classList.add(config.disabledSubmitButtonClass);
     formSubmitButtonElement.disabled = true
 }
 
 const toggleButtonState = (config, inputs, formSubmitButtonElement) =>{
-    if(hasInvalidInput(inputs)){disableButton(config, formSubmitButtonElement);
+    if (hasInvalidInput(inputs)){disableButton(config, formSubmitButtonElement);
     } else {
     formSubmitButtonElement.classList.remove(config.disabledSubmitButtonClass);
     formSubmitButtonElement.disabled = false
