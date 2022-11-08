@@ -102,13 +102,11 @@ initialCards.forEach((elementPlace) =>
 
 function submitFormPhotoHandler (event){
   event.preventDefault();
-  newPlace = placeInput.value;
-  newLink = linkInput.value
-  outputCard({
-    name: newPlace,
-    link: newLink
-  })
-
+  renderCard(elementList, 
+  outputCard(placeInput.value, linkInput.value)
+)
+  placeInput.value = "";
+  linkInput.value = "";
   closePopup(popupCard);
 }
 
