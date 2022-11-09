@@ -29,7 +29,7 @@ const popupCard = document.querySelector('.popup_card')
 const btnEdit = document.querySelector('.profile__edit-button');
 const btnAdd = document.querySelector('.profile__add-button')
 const popups = document.querySelectorAll('.popup');
-const btnClose = document.querySelectorAll('.popup__close-button');
+const btnForClosePopup = document.querySelectorAll('.popup__close-button');
 const title = document.querySelector('.profile__title');
 const about = document.querySelector('.profile__subtitle');
 const formElement = document.querySelector('.popup__form');
@@ -108,9 +108,14 @@ function submitFormPhotoHandler (event){
   placeInput.value = "";
   linkInput.value = "";
   closePopup(popupCard);
+
+  disableButton(
+    { disabledSubmitButtonClass: "popup__submit-button_none" },
+    formElementPhoto.querySelector(".popup__submit-button")
+  );
 }
 
-btnClose.forEach((button) => {
+btnForClosePopup.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });

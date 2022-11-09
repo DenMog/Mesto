@@ -1,7 +1,8 @@
 .popup__submit-button_none {
-    background-color: #e5e5e5;
-    opacity: 0.6;
+    opacity: 20%;
     border: 1px solid #000;
     color:#000;
     cursor: default;
+    background: transparent;
+    pointer-events: none;
   }
