@@ -71,23 +71,23 @@ function submitFormHandler (event) {
 
 function outputCard( name, link ) {
   const elementPlace = elementTemplate.querySelector(".element")
-  // .cloneNode(true);
+  .cloneNode(true);
   elementPlace.querySelector(".element__image").src = link;
   elementPlace.querySelector(".element__image").alt = name;
   elementPlace.querySelector(".element__title").textContent = name;
   
-  // const btnRemove = elementPlace.querySelector(".element__remove");
-  // btnRemove.addEventListener("click", () => removePhoto(elementPlace));
-//   elementPlace.querySelector('.element__like-button').addEventListener('click', function (event) {
-//   event.target.classList.toggle('element__like-button_black');
-// });
+  const btnRemove = elementPlace.querySelector(".element__remove");
+  btnRemove.addEventListener("click", () => removePhoto(elementPlace));
+  elementPlace.querySelector('.element__like-button').addEventListener('click', function (event) {
+  event.target.classList.toggle('element__like-button_black');
+});
   elementPlace.querySelector(".element__image").addEventListener('click', () => {
   popupPhoto.setAttribute('src', link);
   popupPhoto.setAttribute('alt', name);
   popupCaption.textContent = name;
   openPopup(popupImg)
 });
-// return elementPlace
+return elementPlace
 }
 
 function createCard(card) {
