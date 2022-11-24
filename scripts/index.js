@@ -71,23 +71,26 @@ function submitFormHandler (event) {
 
 function outputCard( name, link ) {
   const elementPlace = elementTemplate.querySelector(".element")
-  .cloneNode(true);
-  elementPlace.querySelector(".element__image").src = link;
-  elementPlace.querySelector(".element__image").alt = name;
-  elementPlace.querySelector(".element__title").textContent = name;
+  // .cloneNode(true);
+  // elementPlace.querySelector(".element__image").src = link;
+  // elementPlace.querySelector(".element__image").alt = name;
+  // elementPlace.querySelector(".element__title").textContent = name;
   
-  const btnRemove = elementPlace.querySelector(".element__remove");
-  btnRemove.addEventListener("click", () => removePhoto(elementPlace));
-  elementPlace.querySelector('.element__like-button').addEventListener('click', function (event) {
-  event.target.classList.toggle('element__like-button_black');
-});
-  elementPlace.querySelector(".element__image").addEventListener('click', () => {
-  popupPhoto.setAttribute('src', link);
-  popupPhoto.setAttribute('alt', name);
-  popupCaption.textContent = name;
-  openPopup(popupImg)
-});
-return elementPlace
+  // const btnRemove = elementPlace.querySelector(".element__remove");
+  // btnRemove.addEventListener("click", () => removePhoto(elementPlace));
+//   elementPlace.querySelector('.element__like-button').addEventListener('click', function (event) {
+//   event.target.classList.toggle('element__like-button_black');
+// });
+//   elementPlace.querySelector(".element__image").addEventListener('click', () => {
+//   popupPhoto.setAttribute('src', link);
+//   popupPhoto.setAttribute('alt', name);
+//   popupCaption.textContent = name;
+//   openPopup(popupImg)
+// });
+// return elementPlace
+const newCard = new Card(card, elementTemplate, outputCard);
+const newCardElement = newCard.generateCard();
+return newCardElement;
 }
 
 function createCard(card) {
