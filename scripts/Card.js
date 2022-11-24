@@ -7,7 +7,7 @@ export class Card{
       }
 
       _getTemplate() {
-        return this._elementTemplate.querySelector(".element").content.cloneNode(true);
+        return this._elementTemplate.content.querySelector(".element").cloneNode(true);
       }
 
       _setEventListeners() {

@@ -69,8 +69,8 @@ function submitFormHandler (event) {
     closePopup(popupProfile);
 }
 
-function outputCard( name, link ) {
-  const elementPlace = elementTemplate.querySelector(".element")
+function outputCard( card ) {
+  // const elementPlace = elementTemplate.querySelector(".element")
   // .cloneNode(true);
   // elementPlace.querySelector(".element__image").src = link;
   // elementPlace.querySelector(".element__image").alt = name;
@@ -93,11 +93,6 @@ const newCardElement = newCard.generateCard();
 return newCardElement;
 }
 
-function createCard(card) {
-  const newCard = new Card(card, elementTemplate, outputCard);
-  const newCardElement = newCard.generateCard();
-  return newCardElement;
-}
 
 function renderCard (elementList, elementPlace){
   elementList.prepend(elementPlace);
@@ -107,8 +102,8 @@ const removePhoto = (element) => {
   element.remove()
 }
 
-initialCards.forEach((elementPlace) =>
-  renderCard(elementList, outputCard(elementPlace.name, elementPlace.link))
+initialCards.forEach((card) =>
+  renderCard(elementList, outputCard(card))
 );
 
 function submitFormPhotoHandler (event){
