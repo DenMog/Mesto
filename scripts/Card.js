@@ -7,13 +7,12 @@ export class Card{
       }
 
       _getTemplate() {
-        return this._elementTemplate.content.querySelector(".element").cloneNode(true);
+        return this._elementTemplate.cloneNode(true);
       }
 
       _setEventListeners() {
         this._likeButton = this._element.querySelector('.element__like-button');
         this._cardImage = this._element.querySelector('.element__image');
-    
         this._likeButton.addEventListener('click', () => {
           this._handleLikeClick();
         });
@@ -38,7 +37,6 @@ export class Card{
       generateCard() {
         this._element = this._getTemplate();
         this._setEventListeners();
-    
         this._element.querySelector('.element__title').textContent = this._name;
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;

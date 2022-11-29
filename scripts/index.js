@@ -1,4 +1,5 @@
 import {Card} from './Card.js'
+import{validationElements, FormValidator} from './FormValidator.js'
 const initialCards = [
   {
     name: 'Абрау-Дюрсо',
@@ -39,10 +40,11 @@ const nameInput = document.querySelector('.popup__form-input_name');
 const aboutInput = document.querySelector('.popup__form-input_about');
 const placeInput = document.querySelector('.popup__form-input_place');
 const linkInput = document.querySelector('.popup__form-input_link');
-const elements = document.querySelector('.elements');
+// const elements = document.querySelector('.elements');
 const popupImg = document.querySelector('.popup_img');
 const popupPhoto = popupImg.querySelector('.popup__photo');
 const popupCaption = popupImg.querySelector('.popup__caption');
+const formValidators = {};
 const elementList = document.querySelector('.element-list');
 const elementTemplate = document.querySelector('#element-template').content.querySelector('.element');
 
@@ -70,7 +72,7 @@ function submitFormHandler (event) {
 }
 
 function outputCard( card ) {
-  // const elementPlace = elementTemplate.querySelector(".element")
+//   const elementPlace = elementTemplate.querySelector(".element")
   // .cloneNode(true);
   // elementPlace.querySelector(".element__image").src = link;
   // elementPlace.querySelector(".element__image").alt = name;
@@ -81,12 +83,12 @@ function outputCard( card ) {
 //   elementPlace.querySelector('.element__like-button').addEventListener('click', function (event) {
 //   event.target.classList.toggle('element__like-button_black');
 // });
-//   elementPlace.querySelector(".element__image").addEventListener('click', () => {
-//   popupPhoto.setAttribute('src', link);
-//   popupPhoto.setAttribute('alt', name);
-//   popupCaption.textContent = name;
-//   openPopup(popupImg)
-// });
+elementTemplate.querySelector(".element__image").addEventListener('click', () => {
+  popupPhoto.setAttribute('src', link);
+  popupPhoto.setAttribute('alt', name);
+  popupCaption.textContent = name;
+  openPopup(popupImg)
+});
 // return elementPlace
 const newCard = new Card(card, elementTemplate, outputCard);
 const newCardElement = newCard.generateCard();
@@ -98,9 +100,9 @@ function renderCard (elementList, elementPlace){
   elementList.prepend(elementPlace);
 }
 
-const removePhoto = (element) => {
-  element.remove()
-}
+// const removePhoto = (element) => {
+//   element.remove()
+// }
 
 initialCards.forEach((card) =>
   renderCard(elementList, outputCard(card))
@@ -115,10 +117,10 @@ function submitFormPhotoHandler (event){
   linkInput.value = "";
   closePopup(popupCard);
 
-  disableButton(
-    { disabledSubmitButtonClass: "popup__submit-button_none" },
-    formElementPhoto.querySelector(".popup__submit-button")
-  );
+  // disableButton(
+  //   { disabledSubmitButtonClass: "popup__submit-button_none" },
+  //   formElementPhoto.querySelector(".popup__submit-button")
+  // );
 }
 
 btnForClosePopup.forEach((button) => {
@@ -138,7 +140,17 @@ popups.forEach((item) =>
   })
 );
 
+function validation(validationElements) {
+  const formList = Array.from(document.querySelectorAll(validationElements.formSelector));
 
+  formList.forEach((form) => {
+    const newFormValidator = new FormValidator(validationElements, form);
+    newFormValidator.enableValidation();
+    formValidators[form.getAttribute('name')] = newFormValidator;
+  });
+}
+
+validation(validationElements);
 formElement.addEventListener('submit', submitFormHandler);
 btnEdit.addEventListener('click', openProfilePopup);
 formElementPhoto.addEventListener('submit', submitFormPhotoHandler);
