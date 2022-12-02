@@ -1,9 +1,9 @@
 export class Card{
-    constructor(data, templateSelector, outputCard) {
+    constructor(data, templateSelector, getPhotoZoom) {
         this._name = data.name;
         this._link = data.link;
         this._elementTemplate = templateSelector;
-        this._outputCard = outputCard
+        this._getPhotoZoom = getPhotoZoom
       }
 
       _getTemplate() {
@@ -22,7 +22,7 @@ export class Card{
         });
     
         this._element.querySelector('.element__image').addEventListener('click', () => {
-          this._outputCard(this._name, this._link);
+          this._getPhotoZoom(this._name, this._link);
         });
       }
 
