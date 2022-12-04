@@ -34,7 +34,7 @@ const popups = document.querySelectorAll('.popup');
 const btnForClosePopup = document.querySelectorAll('.popup__close-button');
 const title = document.querySelector('.profile__title');
 const about = document.querySelector('.profile__subtitle');
-const formElement = document.querySelector('.popup__form');
+const formElementProfile = document.querySelector('.popup__form-profile');
 const formElementPhoto = document.querySelector('.popup__form-photo')
 const nameInput = document.querySelector('.popup__form-input_name');
 const aboutInput = document.querySelector('.popup__form-input_about');
@@ -89,13 +89,17 @@ function renderCard (cards){ cards.forEach((card) => {
 });
 }
 
+function renderNewCard (card) {
+  elementList.prepend(outputCard(card))
+} 
+
 function submitFormPhotoHandler (event){
   event.preventDefault();
   const data = {
     name: placeInput.value,
     link: linkInput.value,
   };
-  elementList.prepend(outputCard(data));
+  renderNewCard(data);
   closePopup(popupCard);
 }
 
@@ -126,16 +130,28 @@ function validation(validationElements) {
   });
 }
 
+function resetProfile() {
+  formValidators['input_form_profile'].resetValidation();
+  openProfilePopup(popupProfile)
+
+}
+
+function resetAddPhotoForm() {
+  formValidators['input_form'].resetValidation();openPopup(popupCard)
+}
+
 renderCard(initialCards)
 validation(validationElements);
 
-formElement.addEventListener('submit', submitFormHandler);
-btnEdit.addEventListener('click', () => {
-  formValidators['input_form_profile'].resetValidation();
-  openProfilePopup(popupProfile)});
+formElementProfile.addEventListener('submit', submitFormHandler);
+btnEdit.addEventListener('click', resetProfile)
+//  () => {
+//   formValidators['input_form_profile'].resetValidation();
+//   openProfilePopup(popupProfile)});
 formElementPhoto.addEventListener('submit', submitFormPhotoHandler);
-btnAdd.addEventListener('click', () => {
-  formValidators['input_form'].resetValidation();openPopup(popupCard)});
+btnAdd.addEventListener('click', resetAddPhotoForm)
+// () => {
+//   formValidators['input_form'].resetValidation();openPopup(popupCard)});
 
 
 
